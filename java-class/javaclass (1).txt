@@ -1,0 +1,326 @@
+this keyWord:- 
+		refers to the corrent object.
+use of this keyword:-
+1) this keyword is use to currrent class variable.
+class atul
+{
+	int a;
+	atul(int a)
+	{
+		this.a=a;      10,20
+	}
+	void val()
+	{
+		s.o.p.(a);
+	}
+	psvm()
+	{
+		atul ob=new atul(10);
+		atul obj=new atul(20);
+		ob.val();
+		obj.val();
+	}
+}
+2)  current class method
+class atul
+{
+	void as()
+	{
+		s.o.p("Hello");
+	}
+	void ps()
+	{
+		s.o.p("hi");
+		this.as();        
+	}
+	psvm()
+	{
+		atul ob=new atul();
+		ob.ps();
+	}
+}
+3)  current class constructor
+class atul
+{
+	atul()
+	{
+		s.o.p("Hello");
+	}
+	atul(int a)
+	{
+		s.o.p("hi");
+		this();
+	}
+	p.s.v.m()
+	{
+		atul ob=new atul(20);
+	}
+}
+4)pass as an argument in the menthod
+class atul 
+{
+	void as(atul obj)
+	{
+		s.o.p("Hello");
+	}
+	ar()
+	{
+		as(this);
+	}
+	p.s.v.m()
+	{
+		atul ob=new atul();
+		ob.ps();
+	}
+	
+}
+5)pass as an argument in the cons
+class  atul
+{
+	int a=10;
+	atul()
+	{
+		
+	}
+}
+6) return current class instance 
+class atul
+{
+	atul as()
+	{
+		return this;
+	}
+	void ps()
+	{
+		s.o.p("Hello");
+	}
+	ps.v.m()
+	{
+		new atul().as().ps();
+	}
+
+}
+Inheritance:-
+
+Aggrigation:- 
+
+public class Address {
+String city,state,country;
+
+public Address(String city, String state, String country) {
+	super();
+	this.city = city;
+	this.state = state;
+	this.country = country;
+}
+
+}
+
+Address.java
+
+
+public class Emp {
+int id;
+String name;
+Address address;
+
+public Emp(int id, String name,Address address) {
+	this.id = id;
+	this.name = name;
+	this.address=address;
+}
+
+void display(){
+	System.out.println(id+" "+name);
+	System.out.println(address.city+" "+address.state+" "+address.country);
+}
+
+public static void main(String[] args) {
+Address address1=new Address("gzb","UP","india");
+Address address2=new Address("gno","UP","india");
+
+Emp e=new Emp(111,"varun",address1);
+Emp e2=new Emp(112,"arun",address2);
+	
+e.display();
+e2.display();
+	
+}
+}
+
+
+Covariant Return Type:-
+class atul
+{
+	atul get()
+	{
+		return.this;
+	}
+}
+class atul1 extends atul 
+{
+	atul1 get()
+	{
+		return.this;
+	}
+	void ms()
+	{
+		s.o.p("Hello");
+	}
+	p.sv.m()
+	{
+		new atul1().get().ms();
+	}
+}
+
+super :-
+super is use to invoke a parent class constructor,method.
+1) parent class variable
+class atul
+{
+	int a=10;
+}
+class atul1 extends atul
+{
+	int a=20;
+	void as()
+	{
+		s.o.p(a);
+		s.o.p(super.a);
+	}
+	p.sv.m()
+	{
+		atul1 ob=new atrul();
+		ob.as();
+	{
+}
+2)   to call a parent class method
+class atul
+{
+	void as()
+	{
+		s.o.p("Hello");
+	}
+}
+class atul1 extends atul
+{
+	void ps()
+	{
+		s.o.p("Hi");
+	
+	}
+	void da()
+	{
+		s.o.p("Atul");
+		super.as();
+		ps();	
+	}
+	ps.v.m()
+	{
+		atul1 ob=new atul1();
+		ob.da();
+	}
+}
+3) call a parent class cons
+class atul
+{
+	atul()
+	{
+		s.o.p("Hello");
+	}
+}
+class atul1 extends atul
+{
+	atul1()
+	{
+		super();
+		s.o.p("Hi");
+	}
+	p.s.v.m()
+	{
+		atul1 ob=new atul1();
+	}
+}
+
+1.6
+1.7
+
+instance initilizer block:-
+		it is used to assign value to instance data member.
+class atul
+{
+	atul()
+	{
+		s.o.p("Atul");
+	}
+	{
+		s.o.p("Hello");	
+	}
+	p.s.v.m();
+	{
+		atul ob=new atul();
+	}
+}
+............................................................................
+class atul
+{
+	int a;
+	atul()
+	{
+		
+		a=10;
+		s.o.p(a);
+	}
+	{
+		a=20;
+		s.o.p(a);	
+	}
+	p.s.v.m();
+	{
+		atul ob=new atul();
+	}
+}
+............................
+class atul
+{
+	atul()
+	{
+		s.o.p("Hello");
+	}	
+}
+class atul1 extends atul
+{
+	atul1()
+	{
+		super();
+		s.o.p("Hi");
+	}
+	atul1(int a)
+	{
+		super();
+		s.o.p("atul");
+	}
+	{
+		s.o.p("I am hand");
+	}
+	p.s.v.m()
+	{
+		atul1 ob=new atul1();
+		atul1 obj=new atul1(10);
+		
+	}
+} hello   i am hand  hi 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

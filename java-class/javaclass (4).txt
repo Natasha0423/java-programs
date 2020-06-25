@@ -1,0 +1,225 @@
+How ro set a thread name and get a thread name:-
+initialy the thread name is Thread-0
+Thread-1.
+class atul extends Thread
+{
+	public void run()
+	{
+		s.o.p("hello");
+		s.o.p(Thread.currentThread().getName());
+	}
+	p.s.v.m()
+	{
+		atul ob=new atul();
+		atul obj=new atul();
+		ob.start();
+		s.o.p(ob.getName());   //Thread-0
+		ob.setName("Amit");  
+		
+		s.o.p(ob.getName());  //Amit
+		obj.start();
+	}
+}
+...........................................................................
+to know what currentb thread will run:-
+s.o.p(Thread.currentThread().getName());
+................................................................................
+Priority of Thread:-
+every thread have own priority that is 1 to 10. Some time it desidede on that priority bt JVM.
+
+MIN_PRIORITY(1);
+NORM_PRIORITY(5);
+MAX_PRIORITY(1);
+class atul extends Thread
+{
+	public void run()
+	{
+		s.o.p("hello");
+		s.o.p(Thread.currentThread().getName());
+	}
+	p.s.v.m()
+	{
+		atul ob=new atul();
+		atul obj=new atul();
+		ob.setPriority(Thread.MAX_PRIORITY);
+		obj.setPriority(Thread.MIN_PRIORITY);
+		ob.start();
+		obj.start();
+	}
+}
+............................................................................................................
+Runtime:- 
+class atul
+{
+	p.s.v.m()throws Exception
+	{
+		Runtime.getRuntime().exec("notepad");
+		Runtime.getRuntime().exec("shutdown-s-t-0");
+		Runtime.getRuntime().exec("shutdown-r-t-0");
+
+		Runtime r=Runtime.getRuntime();
+		s.o.p(r.totalMemory());
+		s.o.p(r.freeMemory());
+	}
+}
+.................................................................................................................
+Synchronization:- 
+to countrole the multi threading .
+class atul
+{
+	synchronization void as()
+	{
+		s.o.p("Hello");
+		try
+		{
+			Thread.sleep(500);
+		}
+		catch(Exception e)
+		{
+		}
+	}
+}
+class atul1 extends Thread
+{
+	atul a;
+	aul1(atul a)
+	{
+		this.a=a;
+	}
+	public void run()
+	{
+		a.as();
+	}
+	p.s.v.m()
+	{
+		atul1 ob=new atul1();
+		atul1 obj=new atul1();
+		ob.start();
+		obj.run();
+	}
+}
+................................................
+void as()
+{
+	.....................................
+	....................................
+	.....................................
+	synchronization(this)
+	{
+		..............................................
+	}
+}
+............................................................................................90%;
+Input/Output:- 
+we can input a file and the output (write) a file.
+basically we can perform the file handling.
+Output Stream:- is use to write data.
+FileOutputStream, ByteArrayOutputStream .....................................
+
+	
+Input Stream:- Read a file.
+FileInoutStream, ByteArrayInputStream .....................................
+
+1)FileOutput Stream:-
+import java.io.*;
+public class atul
+{
+	public static void main(String s[])
+	{
+		try
+		{
+			FileOutputStream ob=new FileOutputStream("f:\\ds.txt");
+			String name="I am Atul";
+			byte b[]=name.getBytes();
+			ob.write(b);
+			ob.close();
+		}
+		catch(Exception e)
+		{
+			
+		}
+	}
+}
+FileInputStream:-
+import java.io.*;
+public class atul
+{
+	public static void main(String s[])
+	{
+		try
+		{
+			FileInputStream ob=new FileInputStream("f:\\ds.txt");
+			int i=0;
+			while((i=ob.read())!=-1)
+			{
+				System.out.print((char)i);
+			}
+			ob.close();
+		}
+		catch(Exception e)
+		{
+			
+		}
+	}
+}
+BufferOutputStream:- 
+FileOutputStream ob=new FileOutputStream("f:\\ds.txt");
+BufferOutputStream obj=new BufferOutputStream(ob);
+String name="I am Atul,i am a person";
+byte b[]=name.getBytes();
+obj.write(b);
+ob.close();
+.........................................................................
+FileOutputStream ob=new FileOutputStream("f:\\ds.txt");
+FileOutputStream ob1=new FileOutputStream("f:\\ds1.txt");
+FileOutputStream ob2=new FileOutputStream("f:\\ds2.txt");
+FileOutputStream ob3=new FileOutputStream("f:\\ds3.txt");
+Vector v=new Vector();
+v.add(ob);
+v.add(ob1);
+v.add(ob2);
+v.add(ob3);
+
+Enumeration e=v.elements();
+SequenceInputStream opt=new SequenceInputStream(e);
+int i=0;
+while((i=otp.read())!=-1)
+{
+	s.o.p((chat)i);
+}
+.......................................................................................
+console:- get input from console . it will not display on console what you want to input .
+imoprt java.io.*;
+class atul
+{
+	p.s.v.m()
+	{
+		Console ch=System.console();
+		s.o.p("Enetr user name:-");
+		char cha=ch.readPassword();
+		String pass=String.valueOf();
+		s.o.p("Uaser name:-"+pass);
+	}	
+}
+...................................................................................................................
+String pa="f:\\file\as.txt";
+FilePermition ob=new FilePermition(pa,"read");
+PermitionCollection per=ob.newPermitionCollection();
+per.add(ob);
+FilePermition obj=new FilePermition(pa,"write");
+per.add(obj);
+.....................................................................................................................
+Apple:- 
+Awt:- 
+
+
+
+
+
+
+
+
+
+
+
+
