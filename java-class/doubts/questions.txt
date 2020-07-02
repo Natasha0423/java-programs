@@ -1,0 +1,142 @@
+import java.io.*;
+import java.lang.String.*;
+
+class a{
+     public static void main(String s[]){
+     String name = "I am natasha";
+     System.out.print(name.charAt(2));
+     //System.out.print(name.charAt('a'));  //ERROR
+     }
+ }
+ .............................................
+class b {
+
+      
+        public static void main(String s[])
+        {     final int a=10;
+              b ob= new b();
+              //ob.main();
+              ob.abc();
+              ob.bc();
+            //  s[0]="a";
+             //  System.out.print(s[0]);
+
+         
+        }
+}
+...............................................
+PROTECTED OVER DEFAULT ACCESS MODIFIER.
+
+class A{  
+ protected void msg(){System.out.println("Hello java");}  
+}  
+  
+public class f extends A{  
+ void msg(){System.out.println("Hello java");} 
+ public static void main(String args[]){  
+   f obj=new f();  
+   obj.msg();  
+   }  
+}  
+.....................................................
+interface A{  
+void a();  
+void b();  
+void c();  
+void d();  
+}  
+  
+abstract class B implements A{                 //using abstract class B? why?
+public void c(){System.out.println("I am c");}  
+}  
+  
+class M extends B{  
+public void a(){System.out.println("I am a");}  
+public void b(){System.out.println("I am b");}  
+public void d(){System.out.println("I am d");}  
+}  
+  
+class e{  
+public static void main(String args[]){  
+A a=new M();  
+a.a();  
+a.b();  
+a.c();  
+a.d();  
+}} 
+............................................................
+ERROR IN CLONE
+
+
+class g implements Cloneable
+{
+	int a;
+	g(int a)	
+	{
+		this.a=a;
+	}
+	public static void clone()throws Exception	
+	{
+		return super.clone();
+	}
+	public static void main(String s[])
+	{
+		try
+		{
+			g ob=new g(10);
+			g obj=(g)ob.clone();
+			System.out.print(ob.a);
+			System.out.print(obj.a);
+		}
+		catch(Exception e)
+		{
+		}
+	}
+}
+.................................................. 
+Anonymous object
+
+Constructor class - java.lang.reflect
+
+How `this` can be passed as argument in constructor call
+
+How `this` can be passed as argument in method 
+
+How `this` can be used to return current class instance 
+
+Int abc(int a, float b)
+Int abc (long a,int b)
+Function overloading or not ?
+
+Diff b/w instance initializer and static block 
+
+Can we initialize variables in default method in interface?? What's there type ?
+
+How to access package by fully qualified name ??
+
+What is Object class in java
+
+Can we return array in java ?? How ??
+
+Jagged array ?
+
+Class keyword ??
+
+System.arraycopy(); ??
+
+Can we do array cloning ?
+
+Javadoc Tool ??
+
+String intern ??
+
+How to apply finally in exception handling ? 
+
+Nested try in exception handling is possible??
+
+java regex??
+
+tokenizer ??
+.....................................................
+In upcasting when we override a function then child class function is called 
+and when we override a variable then base class variable is called ?? Why ??

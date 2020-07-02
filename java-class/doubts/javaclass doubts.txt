@@ -1,0 +1,104 @@
+Thread Group :-
+By using thead group we can call multiple thread in a single object.
+public class atul implements Runnable
+{  
+    public void run() 
+    {  
+          System.out.println(Thread.currentThread().getName());  
+    }  
+   public static void main(String[] args)
+   {  
+          atul ob = new atul();  
+          ThreadGroup th = new ThreadGroup("Create ThreadGroup");  
+            
+          Thread t1 = new Thread(th, ob,"one");  
+          t1.start();  
+          Thread t2 = new Thread(th, ob,"two");  
+          t2.start();  
+          Thread t3 = new Thread(th, ob,"three");  
+          t3.start();  
+    }  
+   }  
+......................................................................................................................................
+Shootdown hook:-
+if you want to execute some code before JVM shuts down, use shutdown hook.
+class MyThread extends Thread
+{  
+    public void run()
+    {  
+        System.out.println("shut down hook task completed..");  
+    }  
+}  
+public class TestShutdown1
+{  
+               public static void main(String[] args)throws Exception 
+                {  
+  		Runtime r=Runtime.getRuntime();  
+		r.addShutdownHook(new MyThread());  
+      
+		System.out.println("Now main sleeping... press ctrl+c to exit");  
+		try
+		{
+			Thread.sleep(3000);
+		}
+		catch (Exception e)
+		{}  
+}  
+}  
+.........................................................................................................................................................
+DaemonThread:-
+when all the user threads dies
+JVM terminates this thread automatically..
+
+public class TestDaemonThread1 extends Thread
+{  
+ 	public void run()
+	{  
+		  if(Thread.currentThread().isDaemon())//checking for daemon thread  
+		  {
+   			System.out.println("daemon thread work");  
+		  }  
+  		 else
+		 {  
+			System.out.println("user thread work");  
+ 		}  
+ 	}  
+ 	public static void main(String[] args)
+	{  
+  		TestDaemonThread1 t1=new TestDaemonThread1();//creating thread  
+  		TestDaemonThread1 t2=new TestDaemonThread1();  
+ 		 TestDaemonThread1 t3=new TestDaemonThread1();  
+  
+  		t1.setDaemon(true);//now t1 is daemon thread  
+    
+  		t1.start();//starting threads  
+  		t2.start();  
+ 		 t3.start();  
+	 }  
+}  
+..........................................................................................................................................................................
+Thread Pool:-
+In case of thread pool, a group of fixed size threads are created. A thread from the thread pool is pulled out and assigned a job by the service provider. After completion of the job, thread is contained in the thread pool again.
+
+
+
+
+
+
+
+
+
+
+
+................................................................................................................................................................................
+Java String Constant Pool:- 
+if we can provide one string value to any other string.
+two string can holde a single value (same value);
+String name="Atul";
+String name1=name;
+..............................................................................................................................................................................
+marker interface :- 
+
+An empty interface in Java is known as a marker interface i.e. it does not contain any methods or fields by implementing these interfaces a class
+Examples of marker interface are Serializable, Clonnable and Remote interface. All these interfaces are empty interfaces.
+
