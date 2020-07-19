@@ -1,0 +1,407 @@
+TextField:- 
+import java.awt.*;
+import java.awt.event.*;
+public class atul implements ActionListener
+{
+	Frame f;
+	TextField t,t1,t2;
+	Button b;
+	atul()
+	{
+		f=new Frame();
+		t=new TextField();
+		t.setBounds(50,80,100,50);
+		t1=new TextField();
+		t1.setBounds(50,140,100,50);
+		t2=new TextField();
+		t2.setBounds(50,200,100,50);
+		b=new Button("Add");
+		b.setBounds(50,240,100,80);
+		f.add(t);f.add(t1);f.add(t2);f.add(b);
+		b.addActionListener(this);
+		f.setSize(400,400);
+		f.setLayout(null);
+		f.setVisible(true);
+
+	}
+	public void actionPerformed(ActionEvent e)
+	{
+		String a1=t.getText();
+		String a2=t1.getText();
+		int a=Integer.parseInt(a1);
+		int d=Integer.parseInt(a2);
+		int c=0;
+		if(e.getSource()==b)
+		{
+			c=a+d;
+		}
+		String res=String.valueOf(c);
+		t2.setText(res);
+	}
+	public static void main(String s[])
+	{
+		atul ob=new atul();
+	}
+}
+.......................................................................
+TextArea:- 
+TextArea ar=new TextArea();
+......................................................................
+CheckBox:- 
+import java.awt.*;
+import java.awt.event.*;
+public class atul 
+{
+	Frame f;
+	atul()
+	{
+		f=new Frame();
+		Label l=new Label();
+		Checkbox ch=new Checkbox("Atul");
+		Checkbox ch1=new Checkbox("Amit");
+		Checkbox ch2=new Checkbox("Jitu");
+		ch2.setBounds(20,50,50,50);
+		ch.setBounds(20,100,50,50);
+		ch1.setBounds(20,150,50,50);
+		ch2.setBounds(20,200,50,50);
+		f.add(l);
+		f.add(ch);f.add(ch1);f.add(ch2);
+		f.setSize(400,400);
+		f.setLayout(null);
+		f.setVisible(true);
+		ch.addItemListener(new ItemListener()
+		{
+			public void itemStateChanged(ItemEvent e)
+			{
+				l.setText("Atul Selected");
+			}
+		});
+		ch1.addItemListener(new ItemListener()
+		{
+			public void itemStateChanged(ItemEvent e)
+			{
+				l.setText("Amit Selected");
+			}
+		});
+		ch2.addItemListener(new ItemListener()
+		{
+			public void itemStateChanged(ItemEvent e)
+			{
+				l.setText("Jitu Selected");
+			}
+		});
+	}
+	
+	public static void main(String s[])a
+	{
+		atul ob=new atul();
+	}
+}
+...................................................................................
+CheckBoxGroup:- 
+import java.awt.*;
+import java.awt.event.*;
+public class atul 
+{
+	Frame f;
+	atul()
+	{
+		f=new Frame();
+		Label l=new Label();
+		CheckboxGroup cbg=new CheckboxGroup();
+		Checkbox ch=new Checkbox("M",cbg,true);
+		Checkbox ch1=new Checkbox("F",cbg,false);
+		l.setBounds(20,50,50,50);
+		ch.setBounds(20,100,50,50);
+		ch1.setBounds(20,150,50,50);
+
+		f.add(l);
+		f.add(ch);f.add(ch1);
+		f.setSize(400,400);
+		f.setLayout(null);
+		f.setVisible(true);
+		ch.addItemListener(new ItemListener()
+		{
+			public void itemStateChanged(ItemEvent e)
+			{
+				l.setText("Atul Selected");
+			}
+		});
+		ch1.addItemListener(new ItemListener()
+		{
+			public void itemStateChanged(ItemEvent e)
+			{
+				l.setText("Amit Selected");
+			}
+		});
+	}
+	
+	public static void main(String s[])
+	{
+		atul ob=new atul();
+	}
+}
+.......................................................................................
+Choice:- 
+import java.awt.*;
+import java.awt.event.*;
+public class atul implements ActionListener
+{
+	Frame f;
+	Button b;
+	Label l;
+	Choice c;
+	atul()
+	{
+	
+		f=new Frame();
+		b=new Button("Select");
+		l=new Label();
+		c=new Choice();
+		l.setBounds(50,50,100,80);
+		c.setBounds(50,150,100,80);
+		b.setBounds(50,200,100,80);
+		c.add("-----Select City----");
+		c.add("Agra");
+		c.add("Noida");
+		c.add("Delhi");
+		f.add(l);
+		f.add(c);
+		f.add(b);
+		b.addActionListener(this);
+		f.setSize(400,400);
+		f.setLayout(null);
+		f.setVisible(true);
+	}
+	public void actionPerformed(ActionEvent e)
+	{
+		if(e.getSource()==b)
+		{
+			String city=c.getItem(c.getSelectedIndex());
+			l.setText(city);
+		}
+	}
+	public static void main(String s[])
+	{
+		atul ob=new atul();
+	}
+}
+.......................................................................................................
+List:- 
+List l=new List(4);
+l.setBounds(10,20,100,80);
+l.add("Atul");
+l.add("Amit");
+l.add("Jitu");
+l.add("Kunal");
+
+
+import java.awt.*;
+import java.awt.event.*;
+public class atul implements ActionListener
+{
+	Frame f;
+	Button b;
+	Label l;
+	List l1;
+	atul()
+	{
+	
+		f=new Frame();
+		b=new Button("Select");
+		b.setBounds(10,200,100,80);
+		l=new Label();
+		l.setBounds(10,50,100,80);
+		l1=new List(4);
+		l1.setBounds(10,150,100,80);
+		l1.add("Atul");
+		l1.add("Amit");
+		l1.add("Jitu");
+		l1.add("Kunal");
+		f.add(l1);
+		f.add(l);
+		f.add(b);
+		b.addActionListener(this);
+		f.setSize(400,400);
+		f.setLayout(null);
+		f.setVisible(true);
+	}
+	public void actionPerformed(ActionEvent e)
+	{
+		if(e.getSource()==b)
+		{
+			String name=l1.getItem(l1.getSelectedIndex());
+			l.setText(name);
+		}
+	}
+	public static void main(String s[])
+	{
+		atul ob=new atul();
+	}
+}
+..................................................................................................................
+ScrollBar:- 
+
+.................................................................................................................
+Menu:- 
+.................................................................................................................
+Sub Menu:- 
+..................................................................................................................
+popup menu:- 
+.....................................................................................................................
+panel:- 
+GridLayout();
+Row Column 
+
+
+
+import java.awt.*;  
+public class atul12
+{  
+     atul12()  
+        {  
+        	 Frame f= new Frame();    
+	Font fo=new Font("Elephant",Font.ITALIC,70);
+	Font fo1=new Font("Elephant",Font.ITALIC,25);
+
+        	Panel panel=new Panel();  
+       	 panel.setBounds(10,50,900,200);    
+       	 panel.setBackground(Color.blue);  
+       	 Label l=new Label("KR NETWORK CLOUD");     
+       	  l.setBounds(20,60,80,30);    
+       	 l.setBackground(Color.blue);   
+	 l.setFont(fo);
+
+       	 Panel panel1=new Panel();  
+        	panel1.setBounds(10,260,450,300 );    
+        	panel1.setBackground(Color.blue);  
+
+        	Label name=new Label("Name:-");     
+        	name.setBackground(Color.blue); 
+	name.setFont(fo1);  
+        	TextField ename=new TextField("Enter your Name");   
+        	
+  
+	Label fname=new Label("Father Name:-");     
+        	fname.setBackground(Color.blue); 
+	fname.setFont(fo1);  
+        	TextField efname=new TextField("Enter your Father Name");   
+        	
+	
+	
+	Label mname=new Label("Mother Name:-");     
+        	fname.setBackground(Color.blue); 
+	mname.setFont(fo1);  
+        	TextField emname=new TextField("Enter your Mother Name");   
+        	
+	panel1.add(fname); panel1.add(efname);  
+	panel1.add(name); panel1.add(ename);
+	panel1.add(mname); panel1.add(emname);  
+	panel1.setLayout(new GridLayout(4,4));
+
+        	f.add(panel1);  
+       	 panel.add(l);  
+       	 f.add(panel);  
+       	 f.setSize(900,900);    
+       	 f.setLayout(null);    
+        	f.setVisible(true);    
+        }  
+        public static void main(String args[])  
+        {  
+      	 atul12 ob=new atul12();  
+        }  
+}  
+......................................................................................
+Toolkit:- use to pic a screen Resolution.
+
+Tookit t=Toolkit.getDefaultToolkit();
+t.getScreenResolution();
+Dimension d=t.getScreenSize();
+d.width();
+d.height();
+.............................................................................................
+set a frame Icon:- 
+Image icon=Toolkit.getDefaultToolkit().getImage("as.jpg");
+f.setIconImage(icon);
+.............................................................................................
+Ation Listener:- 
+Click on button
+
+Mouse Listener:- 
+
+f.addMouseListener(this);     //inside the frame
+
+public void mouseClicked(MouseEvent e)
+{
+	
+}
+public void mouseEntered(MouseEvent e)
+{
+	
+}
+public void mouseExited(MouseEvent e)
+{
+	
+}
+public void mousePressed(MouseEvent e)
+{
+	
+}
+public void mouseReleased(MouseEvent e)
+{
+	
+}
+
+
+Ex:- 
+
+import java.awt.*;
+import java.awt.event.*;
+public class atul extends Frame implements MouseListener
+{
+	atul()
+	{
+		addMouseListener(this);
+		setLayout(null);
+		setSize(400,400);
+		setVisible(true);
+	}
+	public void mouseClicked(MouseEvent e)
+	{
+		Graphics g=getGraphics();
+		g.setColor(Color.red);
+		g.fillOval(e.getX(),e.getY(),30,30);
+	}
+	public void mouseEntered(MouseEvent e)
+	{
+	
+	}
+	public void mouseExited(MouseEvent e)
+	{
+	
+	}
+	public void mousePressed(MouseEvent e)
+	{
+	
+	}
+	public void mouseReleased(MouseEvent e)
+	{
+	
+	}
+	public static void main(String s[])
+	{
+		atul ob=new atul();
+	}
+}
+......................................................
+Item Listener:-   Check Box;
+...................................................................
+KeyListenr:- 
+
+
+
+
+
+
+
+

@@ -1,0 +1,171 @@
+Data Base :-
+it is a collection of table which have row and colum.
+
+Colum:- The name of a field with in a row.
+Row:-   A sigle record in a table.
+
+Table:- A sub container with in a data base that store a actula data.
+
+Sql Operation:-
+
+1) to create a data base 
+
+syntax:-     create database name_of_database;
+Ex:-             create database atul;
+
+2)to show all data base 
+show database;
+
+ex:- kr
+dell
+hp
+
+
+3)to delete a data base
+Syntax:- drop database name_of_name;
+Ex:-    drop database atul;
+
+4)to create a table
+Syntax:-   create table table_name(field_name1 datatype(size),field_name2 datatype(size),.......);
+Ex:-   create table student (id int(20) autoincrement, name varchar(225),Lname varchar(225));
+
+5)to show all table in to a data base:-
+show table;
+Ex:- 
+student 
+Employ
+admin
+
+6) to delete a colom in a table:-
+Synatx:- altertable table_name drop field_name;
+Ex:- altertable  student drop Lname;
+
+7)to delete a table:-
+Syntax:- drop table name_of_table;
+Ex:-   drop table student;
+
+8)to insert record in a table:- 
+Syntax:-   insert into table_name(field_name1,field_name2,field_name3)  values(data1,data2,data3);
+
+Ex:-   insert into student(name,Lname) values ('Atul','Varshney');
+
+9)to update record in a table 
+
+update student set name='Kunal',Lname='Thakur' where id=3;
+
+10) to delete Record in a table 
+	All data delete 
+		delete from student;      //delete data  (memory is saved).
+		truncate from student;  // delete data with memory.
+
+11)select all record
+
+select * from student;
+
+12)to select a particular record in a table 
+
+select * from student where id=2;
+
+13)
+select * from student where city='Delhi';	
+
+14)lik close 
+_  (Read a single character)
+%(read a multiple charater)
+
+A_ _ _
+_ _a_ _ _	
+
+A%
+%a%
+
+congratulation
+Atul
+Amit
+ select * from student where name lik '%a%';
+
+15)to filer a data higher to lowser 
+select * from student order by salary;                 //Assinding
+select * from student order by salary desc;      //Desc
+
+16)Limit 
+select * from student order by salary desc limit 2;    
+
+select * from student limit (10,20); 
+
+17)count 
+select count(id) form student;   
+
+18)AVG():-
+select avg(marks) form student;  
+
+19)sum:- 
+select sum(sale) form student;  
+
+.........................................................................
+JDBC:-
+
+1)data base download 
+download Xampp
+go to start
+type xampp
+
+start apetc and my sql
+
+2)download MySQL Cnnector
+	download mysql connector for java
+	https://dev.mysql.com/downloads/connector/j/5.1.html
+3)After download connectort 
+Ext it 
+and copy a file mysql-connector-java-5.1.49.jar
+
+4)create a folder and then paste 
+the copyed connector 
+
+5)type your program 
+import java.sql.*;
+class atul1
+{
+	public static void main(String s[])
+	{
+		Connection con=null;
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			con=DriverManager.getConnection("jdbc:mysql://localhost/","root","");
+			System.out.println("Connect Success.....");
+			Statement stat=con.createStatement();
+			stat.executeUpdate("CREATE DATABASE KUNAL");
+			System.out.println("Data Base Create Success.....");
+		}
+		catch(Exception e)
+		{
+			System.out.println("Not Connected");
+		}
+	}
+}
+
+
+6)  Compile:-      javac -cp  mysql-connector-java-5.1.49.jar;. atul1.java
+Run:-                     java   -cp  mysql-connector-java-5.1.49.jar;. atul1
+.............................................................................................................................
+Insert data
+Delete data
+Update data
+select data 
+
+
+
+
+
+
+	
+
+
+
+ 
+
+
+
+
+

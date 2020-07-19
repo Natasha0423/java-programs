@@ -1,0 +1,108 @@
+JToolTip:-
+import javax.swing.*;
+public class atul20
+{
+	atul20()
+	{	
+		JFrame f=new JFrame();
+		JTextField t=new JTextField();
+		t.setBounds(20,30,100,100);
+		t.setToolTipText("Enter your name:-");
+		f.add(t);
+		
+		f.setSize(400,400);
+		f.setLayout(null);
+		f.setVisible(true);
+	}
+	public static void main(String s[])
+	{
+		atul20 ob=new atul20();
+	}
+}
+............................................................................................
+Layout :- 
+1)Border layout:- 
+
+b, b1,b2,b3;
+
+f.add(b,BorderLayout.NORTH);
+f.add(b1,BorderLayout.CENTER);	
+		     .EAST
+		      .WEST
+ 		      .SOUTH
+............................................................................................
+2)Grid Layout:- 
+row, col
+
+b, b1,b2,b3;
+
+f.setLayout(new GridLayout(2,2));
+.................................................................................................
+3)Flow :- 
+
+
+b, b1,b2,b3;
+
+f.setLayout(new FlowLayout.RIGHT);
+		               .LEFT
+		                .CENTER
+...................................................................................................
+4)Box Layout:- 
+
+b, b1,b2,b3;
+
+f.setLayout(new  BoxLayout(this, BoxLayout.Y_AXIC));
+
+f.setLayout(new  BoxLayout(this, BoxLayout.X_AXIC));
+.........................................................................................................
+Scroll pan
+JScrollPane g=new JScrollPane(p);
+getContentPane().add(g);
+..........................................................................................................
+Date and Tme :-
+
+LocalDate d=LocalDate.of(20,3,2020);
+
+s.o.p(d);
+
+LocalTime t=LocalTime.of(10,4,9);
+.......................................................................................................................
+LocalDateTime   no=LocalDateTime.now();
+
+DateTimeFormatter f=DateTimeFormatter.ofPattern("dd-mm-yyyy");
+
+DateTimeFormatter f=DateTimeFormatter.ofPattern("HH:MM:SS");
+
+String da =no.format(f);
+s.o.p(da);
+
+
+7/7/2020   10:59:12
+....................................................................................................................................
+
+JDBC:-
+
+DATA BASE:-
+
+SQL:-
+SQLite:- 
+PHPmyadmin(SQL):-
+
+DML:- (Data Manipulation Language).
+SQL Query
+
+C.R.U.D. (DML)
+..................................................................................................................................
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,323 @@
+Exception Handling:-
+Statement1
+Statement2  //Run time Error 
+Statement3
+Statement4
+Statement5
+Statement6
+try  :-         Exception handle
+catch:-     catch Exception 
+finally:-    it execute if the exception is accure or not.
+throw:-    throw is use to throw an exception.
+throws:-  it specifie that the methof is may occure exception or not . it always used in method.
+
+try
+{
+	...............
+}
+catch(Exception e)
+{
+	s.op(e);
+}
+
+class atul
+{
+	void as()
+	{
+		try
+		{
+			int c=10/0;   
+		}
+		catch(Exception e)
+		{
+			s.op(e);
+		}
+		s.op.("Hello");
+	}
+}
+..................................................................
+try
+{
+	int a=10/0;
+	
+}
+catsh(DivideByZero w)
+{
+	s.op(w);
+}
+catsh(ArrayOutOfBound w)
+{
+	s.op(w);
+}
+catch(Exception e)
+{
+	s.op(e);
+}
+........................................................................
+class atul
+{
+	void as()
+	{
+		int a=10/0;
+	}
+	void ps()
+	{
+		as();
+	}
+	void ds()
+	{
+		try
+		{
+			ps();
+		}
+		catch(Exception d)
+		{
+			s.o.p(d);
+		}
+	}
+	p.s.v.m()
+	{
+		atul ob=new atul();
+		ob.ds();
+	}
+}
+........................................................................................
+class atul
+{
+	void as() throws Exception
+	{
+		try
+		{
+			throw new ArithmeticException("Amit");  //
+		}
+		catch(Exception e)
+		{
+			s.o.p(e);
+		}
+		s.o.p("hello");
+	}
+	p.s.v.m()
+	{
+	}
+}
+throw is not execute the next code it terminate the program.
+.........................................................................................................................................
+class atul
+{
+	void as() throws Exception
+	{
+		s.o.p("hello");
+	}
+}
+class atul1 extends atul
+{
+	void as()
+	{
+		try 
+		{
+			int =10/0;
+		}
+		catch(Exception e)
+		{
+			s.o.p(e);
+		}
+	}
+}
+if the super class method does not declare the exception an exception subclass overrides method can't declare the exception.
+
+............................................................................................................................
+Inner  Class:-
+Anonymous Inner class :-
+a class that have no name.
+abstract class atul
+{
+	abstract void as();
+}
+class atul1
+{
+	p.s.v.m()
+	{
+		atul ob=new atul();
+		void as()
+		{
+			s.o.p("Hello");
+		};
+		ob.as();
+	}
+}
+.................................................................................................................
+Local Inner Class:- 
+public class atul
+{
+	void as()	
+	{
+		class atul1
+		{
+			void ps()
+			{
+				s.o.p("Hello");
+			}
+			atul1 obj=new atul1();
+			obj.ps();
+		}
+	}
+	p.s.v.m()
+	{
+		atul ob=new atul();
+		ob.as();
+	}
+}
+.................................................................................................
+interface my 
+{
+	void as();
+	interface my1
+	{
+		void ps();
+	}
+}
+class atul  imp   my.my1
+{
+	void ps()
+	{
+		s.o.p("Hello");
+	}
+	ps.v.m()
+	{
+		
+	}
+}
+..........................................................................................................
+Multithreading :-
+Run a muptiple thread at simintaneausly.
+perform multiple operation at same time. 
+
+Life Cycle Of thread:- 
+1)New 
+2)Runnable
+3)Running 
+4)Non-Runnable
+5)Terminate
+.....................................................................................
+Creating a thread:- 
+	2
+1)by using Thread class 
+2)by using Runnble interface 
+1)by using Thread class 
+class atul extends Thread
+{
+	public void run()
+	{
+		so.p("hello");
+	}
+	p.s.v.m()
+	{
+		atul ob=new atul();
+		ob.start();
+	}
+}
+2)by using Runnble interface 
+class atul  implements Runnable
+{
+	public void run()
+	{
+		so.p("hello");
+	}
+	p.s.v.m()
+	{
+		atul ob=new atul();
+		Thread t=new Thread(ob);
+		t.start();
+	}	
+}
+...................................................
+class atul extends Thread
+{
+	public void run()
+	{
+		so.p("hello");
+	}
+	p.s.v.m()
+	{
+		atul ob=new atul();
+		atul obj=new atul();
+		ob.start();
+		obj.start();
+	}
+}
+Thread scheduling:- 
+This is not fix the thread scheduling first run the runnable but only one thread will excute at a time. 
+..................................................................
+class atul extends Thread
+{
+	public void run()
+	{
+		for(int i=1;i<=10;i++)
+		{
+			try
+			{
+				Thread.sleep(500);   
+			}
+			catch(Exception e)
+			{
+				S.o.p(e);
+			}
+			S.o.p(i);
+		}
+	}
+	p.s.v.m()
+	{
+		atul ob=new atul();
+		atul obj=new atul();
+		ob.start();
+		obj.start();
+	}
+}
+
+.....
+atul ob=new atul();
+ob.start();
+ob.start();
+We can't start a thread twise. 
+........................................................
+atul ob=new atul();
+ob.run();
+..................................................................
+join:-     join method is uese to wait the current thread is stop then it will start a next thread.
+class atul extends Thread
+{
+	public void run()
+	{
+		for(int i=1;i<=10;i++)
+		{
+			try
+			{
+				Thread.sleep(500);   
+			}
+			catch(Exception e)
+			{
+				S.o.p(e);
+			}
+			S.o.p(i);
+		}
+	}
+	p.s.v.m()
+	{
+		atul ob=new atul();
+		atul obj=new atul();
+		atul obj1=new atul();
+		ob.start();
+		try
+		{	
+			ob.join();
+		}
+		catch(Exception e)
+		{
+			s.o.p(e);
+		}
+		obj.start();
+		obj1.start();
+	}
+}
+
+

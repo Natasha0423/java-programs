@@ -1,0 +1,132 @@
+Insert data:-
+import java.sql.*;
+class atul1
+{
+	public static void main(String s[])
+	{
+		Connection con=null;
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			con=DriverManager.getConnection("jdbc:mysql://localhost/kunal","root","");
+			System.out.println("Connect Success.....");
+			Statement stat=con.createStatement();
+
+			String yname="Amit";
+			String ylname="Thakur";
+			String inser="INSERT INTO `st`(name,lname) VALUE ('"+yname+"','"+ylname+"');";
+			stat.executeUpdate(inser);
+
+			System.out.println("valu insert Success.....");
+		}
+		catch(Exception e)
+		{
+			System.out.println("Not Connected");
+		}
+	}
+}
+.................................................................
+Delete:- 
+
+import java.sql.*;
+class atul1
+{
+	public static void main(String s[])
+	{
+		Connection con=null;
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			con=DriverManager.getConnection("jdbc:mysql://localhost/kunal","root","");
+			System.out.println("Connect Success.....");
+			Statement stat=con.createStatement();
+
+			int sid=3;
+			String inser="DELETE FROM `st` WHERE id="+sid+";";
+			stat.executeUpdate(inser);
+
+			System.out.println("Delete Success.....");
+		}
+		catch(Exception e)
+		{
+			System.out.println("Not Connected");
+		}
+	}
+}
+.....................................................................................
+
+Update:-
+
+import java.sql.*;
+class atul1
+{
+	public static void main(String s[])
+	{
+		Connection con=null;
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			con=DriverManager.getConnection("jdbc:mysql://localhost/kunal","root","");
+			System.out.println("Connect Success.....");
+			Statement stat=con.createStatement();
+
+			int sid=1;
+			String sname="Kunal";
+
+			String inser="UPDATE `st` SET `name`='"+sname+"' WHERE id="+sid+";";
+			stat.executeUpdate(inser);
+
+			System.out.println("Update Success.....");
+		}
+		catch(Exception e)
+		{
+			System.out.println("Not Connected");
+		}
+	}
+}
+............................................................................
+
+Select:-
+
+import java.sql.*;
+class atul1
+{
+	public static void main(String s[])
+	{
+		Connection con=null;
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			con=DriverManager.getConnection("jdbc:mysql://localhost/kunal","root","");
+			System.out.println("Connect Success.....");
+			Statement stat=con.createStatement();
+
+			String inser="SELECT * FROM `st`;";
+			ResultSet rs=stat.executeQuery(inser);
+			System.out.println("ID"+"    "+"Name"+"    "+"Lname");
+			while(rs.next())
+			{
+				System.out.println(rs.getInt(1)+"    "+rs.getString(2)+"   "+rs.getString(3));
+			}
+
+
+			System.out.println("Update Success.....");
+		}
+		catch(Exception e)
+		{
+			System.out.println("Not Connected");
+		}
+	}
+}
+..........................................................................
+Create data base.
+Insert values in to a  Table.
+Delete a record in a Table.
+Update a record in a Table.
+Select a All record in a Table.
+.........................................................................
+
+
+
+
+

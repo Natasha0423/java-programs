@@ -1,0 +1,168 @@
+Applet:-
+Applet Basic 
+Applet Graphics 
+Applet animation
+Event in applet
+J Applet
+Digital Clock:-
+import java.applet.*;  
+import java.awt.*;  
+import java.util.*;  
+import java.text.*;  
+  
+public class atul extends Applet implements Runnable 
+{  
+  
+   Thread t = null;  
+   int hours=0, minutes=0, seconds=0;  
+   String timeString = "";  
+  Font f3;
+   public void init() {  
+      setBackground( Color.green);  
+	f3 = new Font("Elephant",Font.ITALIC,28);
+   }  
+  
+   public void start() {  
+        t = new Thread( this );  
+        t.start();  
+   }  
+  
+    
+   public void run() {  
+      try {  
+         while (true) {  
+  
+            Calendar cal = Calendar.getInstance();  
+            hours = cal.get( Calendar.HOUR_OF_DAY );  
+            if ( hours > 12 ) hours -= 12;  
+            minutes = cal.get( Calendar.MINUTE );  
+            seconds = cal.get( Calendar.SECOND );  
+  
+            SimpleDateFormat formatter = new SimpleDateFormat("hh:mm:ss");  
+            Date date = cal.getTime();  
+            timeString = formatter.format( date );  
+  
+            repaint();  
+            t.sleep( 1000 ); 
+         }  
+      }  
+      catch (Exception e) { }  
+   }  
+  
+    
+  public void paint( Graphics g ) {  
+      g.setColor( Color.red);  
+	g.setFont(f3);
+      g.drawString( timeString, 100, 100);  
+   }  
+}  
+/*
+<applet code="atul.class" width="400" height="400">  
+</applet>  
+*/
+AWT:-
+import java.awt.*;
+import java.text.*;
+public class atul 
+{
+	atul()
+	{
+		Frame fa=new Frame();
+		Button b=new Button("OK");
+		Font f=new Font("Elephant",Font.ITALIC,20);
+		b.setFont(f);
+		b.setBackground(Color.red);     // Change a backGround Color of button,lavel,......etc
+		b.setForeground(Color.blue);   //  Change a Text Color of button,lavel,......etc
+		b.setBounds(10,10,100,80);
+		fa.add(b);
+		fa.setSize(400,400);
+		fa.setLayout(null);
+		fa.setVisible(true);
+
+	}
+	public static void main(String s[])
+	{
+		atul ob=new atul();
+	}
+} 
+...............................
+import java.awt.*;
+import java.text.*;
+import javax.swing.ImageIcon.*;
+import javax.swing.*;
+public class atul 
+{
+	atul()
+	{
+		JFrame fa=new JFrame();
+		JLabel l=new JLabel(new ImageIcon("a2.jpg"));
+		l.setBounds(10,10,300,300);
+		fa.add(l);
+		fa.setSize(400,400);
+		fa.setLayout(null);
+		fa.setVisible(true);
+
+	}
+	public static void main(String s[])
+	{
+		atul ob=new atul();
+	}
+}
+.................................................
+Button:-   Button b=new Button("Ok");
+.......................................
+Label:- Label l=new Label("Name:-");
+..................................................................................
+TextField:- 
+import java.awt.*;
+import java.awt.event.*;
+public class atul implements ActionListener
+{
+	Button  b;
+	TextField t,t1,t2;
+	Frame fa;
+	atul()
+	{
+		b=new Button("Add");
+		t=new 	TextField();
+		t1=new TextField();
+		t2=new TextField();
+		t.setBounds(20,20,100,80);
+		t1.setBounds(20,50,100,80);
+		t2.setBounds(20,90,100,80);	
+		b.setBounds(20,120,100,80);
+		fa.add(t);	fa.add(t1);fa.add(t2);fa.add(b);		
+		b.addActionListener(this);	
+		fa.setSize(400,400);
+		fa.setLayout(null);
+		fa.setVisible(true);
+
+	}
+	public void actionPerformed(ActionEvent e)
+	{
+		String s=t.getText();
+		String s1=t1.getText();
+		int a=Integer.parseInt(s);
+		int b=Integer.parseInt(s1);
+		int c=0;
+		if(e.getSource()==e)
+		{
+			c=a+b;
+			String res=String.valueOf(c);
+			t2.setText(res);
+			
+		}
+	}
+	public static void main(String s[])
+	{
+		atul ob=new atul();
+	}
+}
+.......................................................................................................
+TextArea:- TextArea  ta=new TextArea();
+........................................................................................................
+
+
+
+
+

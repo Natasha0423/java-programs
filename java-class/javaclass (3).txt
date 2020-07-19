@@ -1,0 +1,283 @@
+javadoc:- 
+	to create a API.
+package com.abc;
+/**  I am atul
+	I am  */
+public class atul
+{
+	/**   Hello KR */
+	public static void add()
+	{
+		Syste.out.print("Hello");
+	}
+}
+
+cmd:- javadoc atul.java
+Create a multiple web pages.
+indx.html
+
+Command Line Arguments:- 
+class atul
+{
+	public static void main(String s[])
+	{
+		System.out.print("My name is"+s[0]);
+	}
+}
+compile :- javac atul.java
+Run:-  java atul   Amit
+
+Output:-   My name is Amit
+
+String:- Array of character is called String. Sequence of Characer.
+import java.lang.string.*;
+Ex-   char name[]={'A','t','u','l'};
+          String name="Atul";
+1)String 
+2)String Buffer
+3)String Builder
+
+1)
+String name="Atul";
+char name[]={'A','t','u','l'};
+String name=new String("Atul");
+
+Immutable String:-   Unchange 
+Sting name="Atul";
+name.concat("Kumar");
+s.o.p(name);       //Atul
+.............................................
+Sting name="Atul";
+name=name.concat("Kumar");
+s.o.p(name);       //Atul
+
+String Compare:- 
+1) equal:-
+
+String s1="Atul";
+String s2="Amit";
+String s3="Atul";
+
+s.o.p(s1.eqals(s2));   //false 
+s.o.p(s1.eqals(s3));  //true 
+...................................................
+2) (==)
+String s1="Atul";
+String s2="Amit";
+String s3=new  String("Atul");
+String s4="Atul";
+s.o.p.(s1==s2);     //false 
+s.o.p.(s1==s3);     //false 
+		have same but using instance.
+s.o.p.(s1==s4); //true  
+
+3) Compareto():-
+
+first String ==  second String   //0
+first String >  second String     //+5
+first String <  second String    //-15
+
+String s1="Atul";  4
+String s2="Amit"; 4
+String s3="Nishant"; 
+s.o.p.(s1.compareto(s2));     // 0
+s.o.p.(s1.compareto(s3));     // -
+s.o.p.(s3.compareto(s1));     // +
+
+....................................................
+Sting add:-
+String name="Atul"+"Kumar";    //Atul Kumar 
+String name="Atul";
+String lastname="Kumar";
+s.o.p(name.concat(lastname));  //Atul Kumar 
+
+String name=10+20+5+"Atul"+5+4;   //35 Atul 5 4
+String name="Atul"+5+4;   	         //Atul 5 4
+.......................................................
+Sub String:- 
+Atul Kumar    //tu
+
+Sting name="Atul Kumar";
+s.o.p.(name.substring(4));   // Kumar
+s.o.p.(name.substring(0,4)); //Atul
+s.o.p.(name.substring(2,4)); //ul
+
+..................................
+StringBuffer and StringBuilder:- 
+A string that can be changed in known an mutabble string.
+
+StringBuffer name=new StringBuffer("Hello");
+name.append("Atul");
+s.o.p(name);               //Hello Atul
+
+StingBuffer name=new StingBuffer("Atul");
+name.concat("Kumar");
+s.o.p(name);       //Atul Kumar 
+
+StingBuffer name=new StingBuffer("Atul Varshney");
+name.insert(4,"Kumar");   //Atul Kumar Varshney
+
+StingBuffer name=new StingBuffer("Atul Kumar Varshney");
+name.replace(1,4,"Amit");   //Atul Kumar Varshney
+name.replace(1,3,"Amit");   //Amitl Kumar Varshney
+
+StingBuffer name=new StingBuffer("Atul Kumar Varshney");
+name.delete(4,8);   //Atul ar Varshney
+
+StingBuffer name=new StingBuffer("Amit");
+name.reverse();   //tima
+
+class atul
+{
+	String name;
+	atul(String name)
+	{
+		this.name;
+	}
+	public void toString()
+	{
+		return name;
+	}	
+	p.s.vm()
+	{
+		atul ob=new atul("Atul");
+		atul obj=new atul("Amit");
+		S.o.p(ob);     //ob.toSting();
+		S.o.p(obj);
+	}
+}
+..........................................................................................
+Tokenizer:-
+I am atul.
+i
+am 
+atul.
+java.util.*;
+public class atul
+{
+	void as()
+	{
+		StringTokenizer name=new  Tokenizer("I am atul");
+		while(name.hasTokenizer())
+		{
+			s.o.p(name.nextToken());
+		}
+	}
+	p.s.pvm()
+	{
+		
+	}
+}
+I 
+am 
+ atul.
+..................................................................................................................................
+name.reverse();
+
+..................................................................................
+String name="I am Atul"
+
+1) charAt();
+	s.o.p(name.charAt(2));    // 
+	s.o.p(name.charAt('a'));  //
+2) concat:- 
+	
+3) contains:- 
+	s.op(name.contains("atul"));     // true 
+	s.op(name.contains("Amit"));  //false 
+4)ends with:-
+	s.op(name.endsWith("atul"));  //true
+	s.op(name.endsWith("I"));  //false 
+5)equalslgnoreCase():-
+	String name="atul";
+	String name1="ATUL";
+	s.o.p(name.equalslgnoreCase(name1));  //true case are ignored.
+
+6)
+String name="atul";
+byte name1[]=name.getbytes();
+for(int i=0;i<name1.length;i++)
+{
+	s.op(name1[i]);
+}
+
+7) getChars():-
+	String name =new String("Bank Colony");
+	char ch[ ]=new char[12];
+	name.getChars(3,10,ch,0);
+    
+	Bank Colony 
+8)indexOf();
+	String name="Atul Kumar";
+	so.p(name.indexOf("u"));  //3
+	so.p(name.indexOf("u",3));  //	
+9)intern():-
+	String name="Atul";
+	String name1=name.intern();
+10)isEmpty():-
+	String name=" ";
+	s.o.p(name.isEmpty());  //
+11) join():-
+	String name=String.join("@","Atul","Amit","Jitu");
+	s.op(name);   //Atu@Amit@Jitu
+12)lastIndexOf:-
+	Sring name="I am atul";
+	name.laseIndexOf("a");	//6
+	name.lastIndexOf("a",5);	//3
+13) length():-
+	
+14)replace():-
+
+15)split:-
+	String name="I am Atul";
+	String name1=name.split("\s");
+	for(String a:name1)
+	{
+		S.O.p.(a);
+	}
+Atul->    C-lang 
+Amit->  C++
+I
+am
+atul
+.........................................
+16) startWitgh();
+	String name="am';
+	s.o.p(name.startWith("a"));       //true
+	s.o.p(name.startWith("m",1));  //true
+
+17) Convert string in to character array:-
+	String name="Atul";
+	cahr name1=name.toCharArray();
+	for(int i=0;i<name1.length();i++)
+	{
+		s.o.p(name1[i]);
+	}
+18)toLowerCase():-
+	String name="ATUL";
+	s.op(name.toLowerCase());
+	
+19)toUpperCase():-
+	String name="atul";
+	s.op(name.toUpperCase());
+20)trim():-
+	remove all extra spaces.
+	String name="  I am atul";
+	s.op(name.trim());
+21) valueOf():-
+	int a=10;
+	String n=String.valueOf(a);
+	S.O.p(a+30);    //1030
+Exception Handling :- 
+
+	
+	
+	
+	
+	
+
+
+
+
+	
+

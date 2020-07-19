@@ -1,0 +1,118 @@
+ JTable:- 
+
+ String head[]={"ID","Name","Phone No."};
+ String data[][]={{"101","Atul","7303059315"},
+ 					{"102","Amit","9456900"}};
+JTable t=new JTable(data,head);
+.............................................................
+JList:- 
+
+DefaultListModel<String>  l=new DefaultListModel<>();
+
+l.addElemnts("Atul");
+l.addElemnts("Amit");
+l.addElemnts("Jitu");
+
+JList<String>  li=new JList<>(l);
+.................................................................
+JScrollBar:-
+
+JScrollBar sco=new JScrollBar();
+................................................................
+JMenu():-
+same as awt menu only replace Menu to JMenu.
+
+...............................................................
+Sub Menu:-
+Same as Awt.
+...................................................................
+JPopup Menu:- 
+
+...................................................................
+JSparator:-
+JSparator  sp=new JSparator();
+l.add(sp);
+
+f.add(sp);
+....................................................................
+public atul 
+{
+	JProgressBar jb;    
+	JFrame f;  
+	int i=0;
+	atul()
+	{
+		f=new JFrame();
+		jb=new JProgressBar(0,4000);     
+		jb.setBounds(10,20,150,150);
+		jb.setValue(0);
+		f.add(jb);
+		f.setSize(500,500);
+		f.setLayout(null);
+		f.setVisible(true);    
+	}
+	public void interate()
+	{
+			while(i<=4000)
+			{
+				jb.setValue(i);
+				i=i+30;
+				try
+				{
+					Thread.sleep(200);
+				}
+				catch(Exception e)
+				{}
+
+			}
+	}
+	public static void main(String a[])
+	{
+		atul ob=new atul();
+		ob.interate();
+	}
+}
+.................................................................
+Tree:- 														
+
+atul project 
+	atul menu
+		home
+		about
+	atul Image 
+		at.jpg
+		as.jps 
+
+
+import javax.swing.tree.DefaultTreeNode;
+public void atul
+{
+	JFrame f;
+	atul()
+	{
+		f=new JFrame();
+		DefaultMutableTreeNode atulproject=new   DefaultMutableTreeNode("Atul Project");
+			DefaultMutableTreeNode  atulmenu =new DefaultMutableTreeNode("Atul Menu");
+			DefaultMutableTreeNode  atulImage=new DefaultMutableTreeNode("Atul Image");
+			atulproject.add(atulmenu);atulproject.add(atulImage);
+
+		DefaultMutableTreeNode   home=new DefaultMutableTreeNode("Home.txt");
+		DefaultMutableTreeNode   about=new DefaultMutableTreeNode("About.txt");
+		DefaultMutableTreeNode   at=new DefaultMutableTreeNode("at.jpg");
+		DefaultMutableTreeNode   as=new DefaultMutableTreeNode("asw.jpg");
+		atulmenu.add(home);atulmenu.add(about);
+		atulImage.add(at);atulImage.add(as);
+
+		JTree jt=new Jtree(atulproject);
+
+		f.add(jt);
+		f.SetSize(400,400);
+		f.setLayout(null);
+		f.setVisible(true);
+	}
+	public static void main(String s[])
+	{
+		atul ob=new atul();
+	}
+}
+

@@ -1,0 +1,198 @@
+Item Listener:- CheckBox 
+KeyListener:- 
+import java.awt.*;
+import java.awt.event.*;
+public class atul15 implements KeyListener
+{
+	Label l;
+	TextArea t;
+	Frame f;
+	atul15()
+	{
+		l=new Label();
+		l.setBounds(20,50,100,100);
+		t=new TextArea();
+		t.setBounds(20,150,300,300);
+		f=new Frame();
+		f.add(l);
+		f.add(t);
+		t.addKeyListener(this);
+		f.setSize(500,500);
+		f.setLayout(null);
+		f.setVisible(true);
+	}
+	public void keyPressed(KeyEvent e)
+	{
+		String se=t.getText();
+		String wo[]=se.split("\\s");
+		l.setText("No of Words:-"+wo.length+"no of Character:-"+se.length());
+	}
+	public void keyReleased(KeyEvent e)
+	{
+	
+	}
+	public void keyTyped(KeyEvent e) 
+    {
+
+    }  
+	public static void main(String[] args)
+	{
+		atul15 ob=new atul15();
+	}
+}
+..........................................................................................................................................................
+Add Multiple Pages (attech one Page to any other Pages)
+f1.java(in first page we can create a manin function. other psges are min  free).
+import java.awt.*;
+import java.awt.event.*;
+public class  f1 implements ActionListener
+{
+	Button b;
+	Frame f;
+	f1()
+	{
+		f=new Frame();
+		b=new Button("Next 1");
+		b.setBounds(20,100,80,80);
+		f.add(b);
+		b.addActionListener(this);
+		f.setSize(400,400);
+		f.setLayout(null);
+		f.setVisible(true);
+	}
+	public void actionPerformed(ActionEvent e)
+	{
+		if(e.getSource()==b)
+		{
+			f2 ob=new f2();
+		}
+	}
+	public static void main(String[] args) 
+	{
+		f1 ob=new f1(); 
+	}
+}
+
+
+
+the next page is
+
+f2.java
+import java.awt.*;
+import java.awt.event.*;
+public class  f2 implements ActionListener
+{
+	Button b;
+	Frame f;
+	f2()
+	{
+		f=new Frame();
+		b=new Button("Next 2");
+		b.setBounds(20,100,80,80);
+		f.add(b);
+		b.addActionListener(this);
+		f.setSize(400,400);
+		f.setLayout(null);
+		f.setVisible(true);
+	}
+	public void actionPerformed(ActionEvent e)
+	{
+		if(e.getSource()==b)
+		{
+			f3 ob=new f3();
+		}
+	}
+}
+
+comple ony the first page 
+Comp:-    javac f1.java
+Run:-     java  f1
+(we can't compile and run other pages).
+...........................................................................................................................................
+Swings:-import javax.swing.*;
+Button:- JButton b=new JButton("OK");
+(put image on button,lavel,.....)
+import javax.swing.*;
+public class atul15
+{
+	atul15()
+	{
+		JFrame f=new JFrame("My new Page");
+		JButton b=new JButton(new ImageIcon("Lg.png"));
+		b.setBounds(20,50,300,300);
+		f.add(b);
+		f.setSize(400,400);
+		f.setLayout(null);
+		f.setVisible(true);
+	}
+	public static void main(String[] args) 
+	{
+		atul15 ob=new atul15();
+	}
+}
+..................................................................................
+JLabel:- 
+JLabel l=new JLabel("Hello");
+...................................................................................
+JTextField :-
+JTextField tx=new JTextField();
+.....................................................................................
+JTextArea:- 
+JTextArea  t=new JTextArea();
+.......................................................................................
+JPasswordField ;-  
+JPasswordField k=new JPasswordField();
+.....................................................................................
+JCheckBox:- 
+JCheckBox ch=new JCheckBox("Atul");
+JCheckBox ch1=new JCheckBox("Amit");
+JCheckBox ch2=new JCheckBox("jitu");
+.......................................................................................
+JRadioButton:- 
+ButtonGroup  bg=new ButtonGroup();
+JRadioButton r=new JRadioButton("M");
+JRadioButton r1=new JRadioButton("F");
+bg.add(r);
+bg.add(r1);
+.......................................................................................
+JComboBox:- 
+String city[]={"Agra","Delhi","Noida","UK"};
+JComboBox cb=new JComboBox(city);
+.......................................................................................
+Reset button:-
+import java.awt.*;
+import java.awt.event.*;
+public class  f1 implements ActionListener
+{
+	Button b;
+	TextField t;
+	Frame f;
+	f1()
+	{
+		f=new Frame();
+		t=new TextField();
+		b=new Button("Next 1");
+		b.setBounds(20,150,80,80);
+		t.setBounds(20,50,100,100);
+		f.add(b);f.add(t);
+		b.addActionListener(this);
+		f.setSize(400,400);
+		f.setLayout(null);
+		f.setVisible(true);
+	}
+	public void actionPerformed(ActionEvent e)
+	{
+		if(e.getSource()==b)
+		{
+			t.setText();
+		}
+	}
+	public static void main(String[] args) 
+	{
+		f1 ob=new f1(); 
+	}
+}
+......................................................................................................................
+
+
+
